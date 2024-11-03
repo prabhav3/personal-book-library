@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Personal Library</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      Home
+    </a>
+    <a href="/books">
+      View all books
+    </a>
+  </nav>
+  <form action="/books" method="post">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" required>
+    <label for="description">Description</label>
+    <textarea name="description" id="description"></textarea>
+    <label for="cover-image">Cover Image URL:</label>
+    <input type="text" name="cover-image" id="cover-image">
+    <button type="submit">Add Book</button>
+  </form>
+</body>
+
+</html>

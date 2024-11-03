@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- views/viewBooks.ejs -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>All Books</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      Home
+    </a>
+    <a href="/books/new">
+      Add new books
+    </a>
+  </nav>
+  <h1>All Books</h1>
+        <ul>
+            <% books.forEach(book => { %>
+                <li>
+                    <h2><%= book.title %></h2>
+                    <p><strong>Author:</strong> <%= book.author %></p>
+                    <p><strong>Description:</strong> <%= book.description %></p>
+                    <% if (book.coverImage) { %>
+                        <img src="<%= book.coverImage %>" alt="Cover Image" width="100">
+                    <% } else { %>
+                        <img src="/images/placeholder.png" alt="No Cover Image" width="100">
+                    <% } %>
+                    <a href="/books/edit/<%= book.id %>">Edit</a>
+                    <a href="/books/delete/<%= book.id %>">Delete</a>
+                </li>
+            <% }) %>
+        </ul>
+</body>
+
+</html>
